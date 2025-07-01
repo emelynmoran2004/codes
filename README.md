@@ -1,1 +1,21 @@
-基于Maven构建，框架使用现在主流的：SpringMVC（4.1）+spring（4.1）+MyBatis（3.4.0），实现基本增删改查，页面国际化。数据源采用阿里开源的Druid，前端采用基于Bootstrap封装的模板AdminLTE（2.3.6）及Bootstrap的一些插件。上个周末刚好有时间，将项目进行拆分，集成Dubbo2.5.3+Zookeeper3.4.6，实现服务化。后续逐步将MQ、Reds等进行集成实现服务调用异步解耦、缓存机制等。
+ BudgetCalcular {
+    double SALARY = 3000.0;
+double SAVING_PERCENT = 0.20;
+double RENT_PERCENT = 0.30;
+double GROCERIES_PERCENT = 0.15;
+double ENTERTAINMENT_PERCENT = 0.10;
+double savedAmount = SALARY * SAVING_PERCENT;
+double rentAmount = SALARY * RENT_PERCENT;
+double groceriesAmount = SALARY * GROCERIES_PERCENT;
+double entertainmentAmount = SALARY * ENTERTAINMENT_PERCENT;
+
+double totalExpenses = rentAmount + groceriesAmount + entertainmentAmount;
+double remainingBalance = SALARY - totalExpenses;
+
+System.out.println("Budget Summary");
+System.out.println("Monthly salary: $" + SALARY);
+System.out.println("Amount Saved: $" + savedAmount);
+System.out.println("Rent: $" + rentAmount);
+System.out.println("Groceries: $" + groceriesAmount);
+System.out.println("Entertainment: $" + entertainmentAmount);
+System.out.println("Remaining Balance: $" + remainingBalance);
